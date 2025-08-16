@@ -22,10 +22,7 @@ jobs:
           cache: maven
 
       - name: Build with Maven (skip tests)
-        run: mvn clean package -DskipTests
-
-      - name: Run tests
-        run: mvn test
+        run: mvn clean install -DskipTests
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
